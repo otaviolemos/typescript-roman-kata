@@ -24,4 +24,8 @@ describe('integer to roman numeral converter', () => {
   test('should return XXXIV for 34', () => {
     expect(toRoman(34)).toEqual('XXXIV')
   })
+
+  test('should return L for 50', () => {
+    expect(toRoman(50)).toEqual('L')
+  })
 })
