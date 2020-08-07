@@ -1,7 +1,7 @@
 import { toRoman } from './roman'
 
 describe('integer to roman numeral converter', () => {
-  test('should throw error for negative number', () => {
+  test('should throw error for negative numbers', () => {
     expect(() => {
       toRoman(-1)
     }).toThrow(new RangeError('Number out of range for Roman numerals.'))
@@ -27,5 +27,9 @@ describe('integer to roman numeral converter', () => {
 
   test('should return L for 50', () => {
     expect(toRoman(50)).toEqual('L')
+  })
+
+  test('should return MMM for 3000', () => {
+    expect(toRoman(3000)).toEqual('MMM')
   })
 })

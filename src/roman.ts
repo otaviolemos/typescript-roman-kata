@@ -20,6 +20,7 @@ function getRomanNumeral (place: number, digit: number): string {
   const placeSymbols = ['I', 'X', 'C', 'M']
   const placeHalfSymbols = ['V', 'L', 'D']
   var ret = ''
+
   if (digit >= 1 && digit <= 3) {
     ret = placeSymbols[place]
     for (let i = 1; i < digit; i++) {
