@@ -2,10 +2,14 @@ export function toRoman (n: number): string {
   if (n < 0 || n > 3999) {
     throw new RangeError('Number out of range for Roman numerals.')
   }
+
   let ret = ''
   let digit: number
   let mult = 1000
-  for (let place = 4; place >= 1; place--) {
+  const THOUSANDS = 4
+  const ONES = 1
+
+  for (let place = THOUSANDS; place >= ONES; place--) {
     digit = Math.trunc(n / mult)
     if (digit >= 1) {
       ret += getRomanNumeral(place - 1, digit)
@@ -13,6 +17,7 @@ export function toRoman (n: number): string {
     }
     mult = mult / 10
   }
+
   return ret
 }
 
