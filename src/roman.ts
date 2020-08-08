@@ -26,18 +26,16 @@ function getRomanNumeral (place: number, digit: number): string {
     for (let i = 1; i < digit; i++) {
       ret += placeSymbols[place]
     }
-    return ret
   } else if (digit === 4) {
     ret = placeSymbols[place] + placeHalfSymbols[place]
-    return ret
   } else if (digit > 4 && digit < 9) {
     ret = placeHalfSymbols[place]
     for (let i = 0; i < digit - 5; i++) {
       ret += placeSymbols[place]
     }
-    return ret
   } else {
     ret = placeSymbols[place] + placeSymbols[place + 1]
-    return ret
   }
+
+  return ret
 }
