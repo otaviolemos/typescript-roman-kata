@@ -17,36 +17,33 @@ export function toRoman (n: number): string {
 }
 
 function getRomanNumeral (place: number, digit: number): string {
-  const placeSymbols = ['I', 'X', 'C', 'M', '']
-  const placeHalfSymbols = ['V', 'L', 'D', '']
+  const placeSymbols = ['I', 'X', 'C', 'M']
+  const placeHalfSymbols = ['V', 'L', 'D']
   let ret = ''
-  const symbol = placeSymbols[place]
-  const halfSymbol = placeHalfSymbols[place]
-  const nextSymbol = placeSymbols[place + 1]
 
   switch (digit) {
     case 1:
     case 2:
     case 3:
-      ret = symbol
+      ret = placeSymbols[place]
       for (let i = 1; i < digit; i++) {
-        ret += symbol
+        ret += placeSymbols[place]
       }
       break
     case 4:
-      ret = symbol + halfSymbol
+      ret = placeSymbols[place] + placeHalfSymbols[place]
       break
     case 5:
     case 6:
     case 7:
     case 8:
-      ret = halfSymbol
+      ret = placeHalfSymbols[place]
       for (let i = 0; i < digit - 5; i++) {
-        ret += symbol
+        ret += placeSymbols[place]
       }
       break
     case 9:
-      ret = symbol + nextSymbol
+      ret = placeSymbols[place] + placeSymbols[place + 1]
   }
 
   return ret

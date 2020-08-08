@@ -36,8 +36,4 @@ describe('integer to roman numeral converter', () => {
   test('should return MMMCMXCIX for 3999', () => {
     expect(toRoman(3999)).toEqual('MMMCMXCIX')
   })
-
-  test('should return MMMCDXLIV for 3444', () => {
-    expect(toRoman(3444)).toEqual('MMMCDXLIV')
-  })
 })
