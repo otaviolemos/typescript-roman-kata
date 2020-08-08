@@ -21,20 +21,29 @@ function getRomanNumeral (place: number, digit: number): string {
   const placeHalfSymbols = ['V', 'L', 'D']
   var ret = ''
 
-  if (digit >= 1 && digit <= 3) {
-    ret = placeSymbols[place]
-    for (let i = 1; i < digit; i++) {
-      ret += placeSymbols[place]
-    }
-  } else if (digit === 4) {
-    ret = placeSymbols[place] + placeHalfSymbols[place]
-  } else if (digit > 4 && digit < 9) {
-    ret = placeHalfSymbols[place]
-    for (let i = 0; i < digit - 5; i++) {
-      ret += placeSymbols[place]
-    }
-  } else {
-    ret = placeSymbols[place] + placeSymbols[place + 1]
+  switch (digit) {
+    case 1:
+    case 2:
+    case 3:
+      ret = placeSymbols[place]
+      for (let i = 1; i < digit; i++) {
+        ret += placeSymbols[place]
+      }
+      break
+    case 4:
+      ret = placeSymbols[place] + placeHalfSymbols[place]
+      break
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+      ret = placeHalfSymbols[place]
+      for (let i = 0; i < digit - 5; i++) {
+        ret += placeSymbols[place]
+      }
+      break
+    case 9:
+      ret = placeSymbols[place] + placeSymbols[place + 1]
   }
 
   return ret
