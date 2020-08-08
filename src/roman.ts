@@ -2,9 +2,9 @@ export function toRoman (n: number): string {
   if (n < 0 || n > 3999) {
     throw new RangeError('Number out of range for Roman numerals.')
   }
-  var ret = ''
-  var digit: number
-  var mult = 1000
+  let ret = ''
+  let digit: number
+  let mult = 1000
   for (let place = 4; place >= 1; place--) {
     digit = Math.trunc(n / mult)
     if (digit >= 1) {
@@ -19,7 +19,7 @@ export function toRoman (n: number): string {
 function getRomanNumeral (place: number, digit: number): string {
   const placeSymbols = ['I', 'X', 'C', 'M']
   const placeHalfSymbols = ['V', 'L', 'D']
-  var ret = ''
+  let ret = ''
 
   switch (digit) {
     case 1:
