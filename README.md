@@ -1,3 +1,3 @@
-# typescript-base
+# typescript-roman-kata
 
-Base typescript project with all necessary dependencies.
+Roman numerals Kata using TypeScript.
