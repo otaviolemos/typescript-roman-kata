@@ -6,13 +6,13 @@ export function toRoman (n: number): string {
   let ret = ''
   let digit: number
   let mult = 1000
-  const THOUSANDS = 4
-  const ONES = 1
+  const THOUSANDS = 3
+  const ONES = 0
 
   for (let place = THOUSANDS; place >= ONES; place--) {
     digit = Math.trunc(n / mult)
     if (digit >= 1) {
-      ret += getRomanNumeral(place - 1, digit)
+      ret += getRomanNumeral(place, digit)
       n = n - (digit * mult)
     }
     mult = mult / 10
