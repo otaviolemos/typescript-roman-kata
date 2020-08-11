@@ -7,6 +7,12 @@ describe('integer to roman numeral converter', () => {
     }).toThrow(new RangeError('Number out of range for Roman numerals.'))
   })
 
+  test('should throw error for zero', () => {
+    expect(() => {
+      toRoman(0)
+    }).toThrow(new RangeError('Number out of range for Roman numerals.'))
+  })
+
   test('should throw error for numbers larger than 3999', () => {
     expect(() => {
       toRoman(4000)
