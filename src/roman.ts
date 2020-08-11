@@ -1,5 +1,5 @@
 export function toRoman (n: number): string {
-  if (n < 0 || n > 3999) {
+  if (n <= 0 || n > 3999) {
     throw new RangeError('Number out of range for Roman numerals.')
   }
 
@@ -33,8 +33,7 @@ function getRomanNumeral (place: number, digit: number): string {
     case 1:
     case 2:
     case 3:
-      ret = symbol
-      for (let i = 1; i < digit; i++) {
+      for (let i = 0; i < digit; i++) {
         ret += symbol
       }
       break
