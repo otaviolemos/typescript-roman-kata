@@ -4,17 +4,12 @@ export function toRoman (n: number): string {
   }
 
   let ret = ''
-  let digit: number
-  const ONES = 0
   const numStr = n.toString()
   const len = numStr.length
 
-  for (let place = len - 1; place >= ONES; place--) {
-    digit = parseInt(numStr.charAt(len - place - 1))
-    if (digit >= 1) {
-      ret += getRomanNumeral(place, digit)
-    }
-  }
+  numStr.split('').forEach((digit, index) => {
+    ret += getRomanNumeral(len - index - 1, parseInt(digit))
+  })
 
   return ret
 }
