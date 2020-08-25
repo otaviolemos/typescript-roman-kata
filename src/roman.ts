@@ -5,17 +5,15 @@ export function toRoman (n: number): string {
 
   let ret = ''
   let digit: number
-  let mult = 1000
-  const THOUSANDS = 3
   const ONES = 0
+  const numStr = n.toString()
+  const len = numStr.length
 
-  for (let place = THOUSANDS; place >= ONES; place--) {
-    digit = Math.trunc(n / mult)
+  for (let place = len - 1; place >= ONES; place--) {
+    digit = parseInt(numStr.charAt(len - place - 1))
     if (digit >= 1) {
       ret += getRomanNumeral(place, digit)
-      n = n - (digit * mult)
     }
-    mult = mult / 10
   }
 
   return ret
