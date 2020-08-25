@@ -5,10 +5,9 @@ export function toRoman (n: number): string {
 
   let ret = ''
   const numStr = n.toString()
-  const len = numStr.length
 
   numStr.split('').forEach((digit, index) => {
-    ret += getRomanNumeral(len - index - 1, parseInt(digit))
+    ret += getRomanNumeral(numStr.length - index - 1, parseInt(digit))
   })
 
   return ret
