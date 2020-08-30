@@ -1,16 +1,12 @@
+
 export function toRoman (n: number): string {
   if (n <= 0 || n > 3999) {
     throw new RangeError('Number out of range for Roman numerals.')
   }
-
-  let ret = ''
   const numStr = n.toString()
-
-  numStr.split('').forEach((digit, index) => {
-    ret += getRomanNumeral(numStr.length - index - 1, parseInt(digit))
-  })
-
-  return ret
+  return numStr.split('').map((digit, index) => {
+    return getRomanNumeral(numStr.length - index - 1, parseInt(digit))
+  }).join('')
 }
 
 function getRomanNumeral (place: number, digit: number): string {
