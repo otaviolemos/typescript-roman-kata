@@ -3,9 +3,11 @@ export function toRoman (n: number): string {
     throw new RangeError('Number out of range for Roman numerals.')
   }
   const numStr = n.toString()
-  return numStr.split('').map((digit, index) => {
-    return getRomanNumeral(numStr.length - index - 1, parseInt(digit))
-  }).join('')
+
+  return numStr
+    .split('')
+    .map((digit, index) => getRomanNumeral(numStr.length - index - 1, parseInt(digit)))
+    .join('')
 }
 
 function getRomanNumeral (place: number, digit: number): string {
