@@ -25,7 +25,7 @@ function getRomanNumeral (place: number, digit: number): string {
       return symbol + halfSymbol
     case digit <= 8:
       return halfSymbol + symbol.repeat(digit - 5)
-    default:
+    case digit === 9:
       return symbol + nextSymbol
   }
 }
