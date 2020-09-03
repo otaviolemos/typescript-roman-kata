@@ -5,7 +5,7 @@ export function toRoman (n: number): string {
   if (n <= 0 || n > 3999) throw new RangeError('Number out of range for Roman numerals.')
 
   return numberToArray(n).reduce(
-    (accumulator: string, digit: number, index: number, original: number[]): string =>
+    (accumulator, digit, index, original): string =>
       accumulator + getRomanNumeral(original.length - index - 1, digit)
     , ''
   )
