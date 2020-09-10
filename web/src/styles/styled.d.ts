@@ -12,11 +12,12 @@ declare module "styled-components" {
       li: string;
       text: string;
       inputColor: string;
+      inputBackground: string;
       title: string;
-      buttonText: string;
+      inputBorder: string;
       backgroundButton: string;
       backgroundBox: string;
-      inputBorder: string;
+      buttonText: string;
     };
   }
 }

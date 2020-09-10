@@ -24,26 +24,26 @@ export default createGlobalStyle`
   }
 
   body {
-    background: var(--background);
+    background: ${(props) => props.theme.colors.background};
   }
 
   body, input, button, textarea {
     font: 400 1.6rem 'Libre Baskerville';
-    color: var(--color-text);
-    outline-color: var(--color-button);
+    color: ${(props) => props.theme.colors.text};
+    outline-color: ${(props) => props.theme.colors.inputColor};
     -webkit-font-smoothing: antialiased;
   }
 
-  #root {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
-    // align-items: center;
-  }
+  /* #root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  } */
 
   h1, h2, h3, h4, h5, h6 {
     font: 700 3.2rem 'Playfair Display';
-    color: var(--color-title);
+    color: ${(props) => props.theme.colors.title};
   }
 
   @media (min-width: 900px) {

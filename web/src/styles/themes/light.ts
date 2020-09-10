@@ -10,9 +10,10 @@ export default {
     title: "#B4794D",
     text: "#f5dead",
     inputColor: "#f5dead",
-    buttonText: "#F8F6F2",
+    inputBackground: "#ffffff",
+    inputBorder: "#F8F6F2",
     backgroundButton: "#DE9A60",
     backgroundBox: "#fdfdfd",
-    inputBorder: "#EEDAA8",
+    buttonText: "#DE9A60",
   },
 };
