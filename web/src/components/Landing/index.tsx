@@ -1,17 +1,17 @@
 import React from "react";
 
 import unionIcon from "../../assets/union.svg";
-import "./styles.css";
+import { LandingContainer, TitleDiv } from "./styles";
 
 const Landing: React.FC = () => {
   return (
-    <div id="landing">
-      <div className="title">
+    <LandingContainer>
+      <TitleDiv>
         <h1>Algarismos Romanos</h1>
         <h2>Conversor</h2>
-      </div>
+      </TitleDiv>
       <img src={unionIcon} alt="Union" />
-    </div>
+    </LandingContainer>
   );
 };
 

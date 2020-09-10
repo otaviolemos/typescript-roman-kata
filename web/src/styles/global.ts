@@ -3,13 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   :root {
     font-size: 40%;
-    --background-input-box: #fdfdfd;
-    --background: #F8F6F2;
-    --color-text-button: #F8F6F2;
-    --color-text: #f5dead;
-    --color-input-border: #EEDAA8;
-    --color-button: #DE9A60;
-    --color-title: #B4794D;
+
   }
 
   * {
