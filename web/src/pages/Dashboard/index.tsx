@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import { Container } from './styles'
+import Landing from "../../components/Landing";
+import Converter from "../../components/Converter";
+import { Container } from "./styles";
 
 const Dashboard: React.FC = () => {
   return (
     <Container>
-      <h1>Dashboard!</h1>
+      <Landing />
+      <Converter />
     </Container>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

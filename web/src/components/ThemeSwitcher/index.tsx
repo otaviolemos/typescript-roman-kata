@@ -1,15 +1,15 @@
-import React, { useContext } from 'react'
-import Switch from 'react-switch'
-import { ThemeContext } from 'styled-components'
+import React, { useContext } from "react";
+import Switch from "react-switch";
+import { ThemeContext } from "styled-components";
 
-import { Container } from './styles'
+import { Container } from "./styles";
 
 interface Props {
-  toggleTheme(): void
+  toggleTheme(): void;
 }
 
 const ThemeSwitcher: React.FC<Props> = ({ toggleTheme }: Props) => {
-  const { colors, title } = useContext(ThemeContext)
+  const { colors, title } = useContext(ThemeContext);
 
   return (
     <Container>
@@ -17,7 +17,7 @@ const ThemeSwitcher: React.FC<Props> = ({ toggleTheme }: Props) => {
         Roman Kata
         <Switch
           onChange={toggleTheme}
-          checked={title === 'dark'}
+          checked={title === "dark"}
           checkedIcon={false}
           uncheckedIcon={false}
           height={10}
@@ -30,7 +30,7 @@ const ThemeSwitcher: React.FC<Props> = ({ toggleTheme }: Props) => {
         />
       </h1>
     </Container>
-  )
-}
+  );
+};
 
-export default ThemeSwitcher
+export default ThemeSwitcher;
