@@ -12,12 +12,11 @@ declare module "styled-components" {
       li: string;
       text: string;
       inputColor: string;
-      inputPlaceholder: string;
-      strongSchedule: string;
-      appointmentBackground: string;
-      dayPicker: string;
-      dayAvailableBackground: string;
-      dayAvailableBackgroundHover: string;
+      title: string;
+      buttonText: string;
+      backgroundButton: string;
+      backgroundBox: string;
+      inputBorder: string;
     };
   }
 }
