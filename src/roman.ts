@@ -18,14 +18,12 @@ function getRomanNumeral (place: number, digit: number): string {
   const symbol = placeSymbols[place]
   const halfSymbol = placeHalfSymbols[place]
   const nextSymbol = placeSymbols[place + 1]
-  switch (true) {
-    case digit <= 3:
-      return symbol.repeat(digit)
-    case digit === 4:
-      return symbol + halfSymbol
-    case digit <= 8:
-      return halfSymbol + symbol.repeat(digit - 5)
-    case digit === 9:
-      return symbol + nextSymbol
-  }
+
+  const rules = [
+    { key: digit <= 3, value: () => symbol.repeat(digit) },
+    { key: digit === 4, value: () => symbol + halfSymbol },
+    { key: digit <= 8, value: () => halfSymbol + symbol.repeat(digit - 5) },
+    { key: digit === 9, value: () => symbol + nextSymbol }
+  ]
+  return rules.find(rule => rule.key).value()
 }
