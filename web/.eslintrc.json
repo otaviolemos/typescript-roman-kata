@@ -28,6 +28,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "import/prefer-default-export": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -36,7 +37,8 @@
         "tsx": "never"
       }
     ],
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-use-before-define": "off"
   },
   "settings": {
     "import/resolver": {
