@@ -13,22 +13,20 @@ const ThemeSwitcher: React.FC<Props> = ({ toggleTheme }: Props) => {
 
   return (
     <Container>
-      <h1>
-        Roman Kata
-        <Switch
-          onChange={toggleTheme}
-          checked={title === "dark"}
-          checkedIcon={false}
-          uncheckedIcon={false}
-          height={10}
-          width={40}
-          handleDiameter={20}
-          offColor={colors.secondary}
-          onColor={colors.text}
-          offHandleColor={colors.secondary}
-          onHandleColor={colors.text}
-        />
-      </h1>
+      <h1>Roman Kata</h1>
+      <Switch
+        onChange={toggleTheme}
+        checked={title === "dark"}
+        checkedIcon={false}
+        uncheckedIcon={false}
+        height={10}
+        width={40}
+        handleDiameter={20}
+        offColor={colors.secondary}
+        onColor={colors.text}
+        offHandleColor={colors.secondary}
+        onHandleColor={colors.text}
+      />
     </Container>
   );
 };
