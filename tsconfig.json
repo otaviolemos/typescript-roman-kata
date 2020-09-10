@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   "compilerOptions": {
     "outDir": "./dist",
@@ -36,3 +37,14 @@
   ]
 }
 >>>>>>> 0ff313e6f371a2e6db71e18c24154ce7b50cb8ff
+=======
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "commonjs",
+    "target": "es2019",
+    "esModuleInterop": true,
+    "allowJs": true
+  }
+}
+>>>>>>> parent of a67675c... fix: accept changes
