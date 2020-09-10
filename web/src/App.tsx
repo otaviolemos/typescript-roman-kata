@@ -1,17 +1,32 @@
 import React from "react";
+import { ThemeProvider, DefaultTheme } from "styled-components";
+import { BrowserRouter as Router } from "react-router-dom";
+import usePersistedState from "./utils/usePersistedState";
 
-import Landing from "./components/Landing";
-import Converter from "./components/Converter";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import light from "./styles/themes/light";
+import dark from "./styles/themes/dark";
 
-import "./assets/styles/global.css";
+import Routes from "./routes";
 
-function App(): JSX.Element {
+import GlobalStyle from "./styles/global";
+
+const App: React.FC = () => {
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", dark);
+
+  const toggleTheme = (): void => {
+    setTheme(theme.title === "light" ? dark : light);
+  };
+
   return (
-    <>
-      <Landing />
-      <Converter />
-    </>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <ThemeSwitcher toggleTheme={toggleTheme} />
+        <Routes />
+      </Router>
+      <GlobalStyle />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,4 @@
 module.exports = {
-  trailingComma: 'all',
-  allowParens: 'avoid',
+  trailingComma: "all",
+  allowParens: "avoid",
 };
