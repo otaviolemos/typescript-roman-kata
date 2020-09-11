@@ -12,8 +12,8 @@ export default {
     inputColor: "#f5dead",
     inputBackground: "#191919",
     inputBorder: "#181818",
-    backgroundButton: "#DE9A60",
+    backgroundButton: "#363636",
     backgroundBox: "#202020",
-    buttonText: "#F8F6F2",
+    buttonText: "#DE9A60",
   },
 };
