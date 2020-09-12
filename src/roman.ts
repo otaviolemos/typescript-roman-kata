@@ -1,29 +1,28 @@
-export function toRoman (n: number): string {
-  if (n <= 0 || n > 3999) {
+export function toRoman (valor: number): string {
+  if (valor <= 0 || valor > 3999) {
     throw new RangeError('Number out of range for Roman numerals.')
   }
-  const numStr = n.toString()
-  return numStr
-    .split('')
-    .map((digit, index) => getRomanNumeral(numStr.length - index - 1, parseInt(digit)))
-    .join('')
-}
 
-function getRomanNumeral (place: number, digit: number): string {
-  if (digit === 0) {
-    return ''
+  const toRomanConvertion = (numero: string): string => {
+    const places = numero.length - 1
+    const firstDigit = numero[0]
+    const special = ['', '4', '9']
+    const placeSymbols = ['I', 'V', 'X', 'L', 'C', 'D', 'M', '']
+    const operators = [(n: number) => +n / 5, (n: number) => +n % 5]
+    const isSpecialCase = +firstDigit % 5 === 4
+    const [sliceStart, sliceEnd] = [places * 2, places * 2 + 2 + (+isSpecialCase)]
+    const placeWorkSymbols = placeSymbols.slice(sliceStart, sliceEnd)
+    const specialCase = (): string => placeWorkSymbols.map((c, i) => i === 0 || special.indexOf(firstDigit) === i ? c : '').join('')
+    const normalCase = (): string => placeWorkSymbols.reverse().map((c, i) => c.repeat(operators[i](+firstDigit))).join('')
+    const strategy = [normalCase, specialCase][+(isSpecialCase)]
+    const roman = strategy()
+    return roman
   }
-  const placeSymbols = ['I', 'X', 'C', 'M', '']
-  const placeHalfSymbols = ['V', 'L', 'D', '']
-  const symbol = placeSymbols[place]
-  const halfSymbol = placeHalfSymbols[place]
-  const nextSymbol = placeSymbols[place + 1]
 
-  const rules = [
-    { key: digit <= 3, value: () => symbol.repeat(digit) },
-    { key: digit === 4, value: () => symbol + halfSymbol },
-    { key: digit <= 8, value: () => halfSymbol + symbol.repeat(digit - 5) },
-    { key: digit === 9, value: () => symbol + nextSymbol }
-  ]
-  return rules.find(rule => rule.key).value()
+  const result = valor
+    .toString()
+    .split('')
+    .map((c, i, a) => toRomanConvertion(`${c}${'0'.repeat(a.length - i - 1)}`))
+    .join('')
+  return result
 }
