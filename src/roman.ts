@@ -13,17 +13,30 @@ function getRomanNumeral (place: number, digit: number): string {
   if (digit === 0) {
     return ''
   }
+
   const placeSymbols = ['I', 'X', 'C', 'M', '']
   const placeHalfSymbols = ['V', 'L', 'D', '']
   const symbol = placeSymbols[place]
   const halfSymbol = placeHalfSymbols[place]
   const nextSymbol = placeSymbols[place + 1]
 
-  const rules = [
-    { key: digit <= 3, value: () => symbol.repeat(digit) },
-    { key: digit === 4, value: () => symbol + halfSymbol },
-    { key: digit <= 8, value: () => halfSymbol + symbol.repeat(digit - 5) },
-    { key: digit === 9, value: () => symbol + nextSymbol }
-  ]
-  return rules.find(rule => rule.key).value()
+  if (digit <= 3) {
+    return symbol.repeat(digit)
+  }
+
+  if (digit === 4) {
+    return symbol + halfSymbol
+  }
+
+  if (digit === 5) {
+    return halfSymbol
+  }
+
+  if (digit >= 6 && digit <= 8) {
+    return halfSymbol + symbol.repeat(digit - 5)
+  }
+
+  if (digit === 9) {
+    return symbol + nextSymbol
+  }
 }
